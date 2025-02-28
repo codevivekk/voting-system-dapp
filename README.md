@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Decentralized Voting Application
 
-## Getting Started
+## 📝 Project Overview
+This project is a **Decentralized Voting Application** built using **Ethereum Blockchain, Solidity, Hardhat, React, and Ethers.js**. It allows users to cast votes on the Ethereum testnet securely and transparently.
 
-First, run the development server:
+## 🚀 Features
+- **Smart Contracts**: Solidity-based contracts deployed on Ethereum.
+- **Voting Mechanism**: Users can vote for candidates on-chain.
+- **Candidate List & Results**: Fetch candidates and real-time vote counts.
+- **MetaMask Authentication**: Users sign transactions using MetaMask.
+- **State Management**: React hooks (`useState`, `useEffect`).
+- **Bonus** (Optional): Voter registration & decentralized storage (IPFS).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🏗 Tech Stack
+- **Blockchain**: Ethereum, Solidity
+- **Smart Contract Development**: Hardhat
+- **Frontend**: React.js
+- **Blockchain Interaction**: Ethers.js
+- **Wallet Authentication**: MetaMask
+- **Storage (Optional)**: IPFS
+
+## 📌 Setup Instructions
+### 1️⃣ Prerequisites
+Ensure you have the following installed:
+- **Node.js** (v16+)
+- **Hardhat** (`npm install -g hardhat`)
+- **MetaMask** (Browser Extension)
+- **Ethereum Testnet (Sepolia)**
+
+### 2️⃣ Clone Repository
+
+### 3️⃣ Install Dependencies
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4️⃣ Configure Environment Variables
+Create a `.env` file in the root directory and add:
+```env
+PRIVATE_KEY=your_testnet_wallet_private_key
+INFURA_API_URL=https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5️⃣ Compile & Deploy Smart Contract
+```sh
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network sepolia
+```
+*Copy the deployed contract address and update it in `src/utils/contract.js`.*
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 6️⃣ Start Frontend
+```sh
+npm start
+```
 
-## Learn More
+## 📤 Deployment
+2. **Smart Contract**: Deploy on Ethereum testnet (e.g., Sepolia).
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
